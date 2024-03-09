@@ -1,0 +1,295 @@
+@use "reset";
+@use "variables" as *;
+@use "mixins" as *;
+
+// general
+
+body {
+    font-family: $ff-serif;
+    font-size: $fs-400;
+    font-weight: $fw-normal;
+    color: $neutral-700;
+}
+
+.button {
+    display: block;
+    width: 100%;
+    text-align: center;
+    border: none;
+    background-color: $neutral-700;
+    color: $neutral-100;
+    padding-block: .8em;
+    @include border-radius (7px);
+    @include transition (transform .5s ease-out);
+
+    &:hover {
+        @include transform (scale(0.95));
+    }
+    &:active {
+        @include transform (scale(0.92));
+    }
+}
+
+// styling
+
+.content {
+    min-height: 100vh;
+    max-width: 1440px;
+    min-width: 320px;
+    margin-inline: auto;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    box-shadow: 0px 0px 15px #333;
+
+    @include media($bp-sm) {
+        grid-template-columns: 2fr 5fr;
+    }
+
+    &>* {
+        height: 100%;
+    }
+}
+
+// cards
+
+.cards {
+    background-image: url("../images/bg-main-mobile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 35vh;
+    position: relative;
+
+    @include media($bp-sm) {
+        background-image: url("../images/bg-main-desktop.png");
+        height: 100%;
+    }
+
+    // ---
+
+    .card {
+        height: 145px;
+        aspect-ratio: 1.8 / 1;
+        padding: 1.25rem;
+        position: absolute;
+        color: $neutral-100;
+        @include border-radius (7px);
+
+        @include media($bp-sm) {
+            height: 185px;
+        }
+    }
+
+    .card--front {
+        background-image: url("../images/bg-card-front.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 11;
+        bottom: -20%;
+        left: 50%;
+        @include transform (translateX(-65%));
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include media($bp-sm) {
+            @include transform (translate(30%, -7%));
+            bottom: 50%;
+            left: auto;
+            right: 0;
+        }
+
+        .decorative-circles {
+            display: flex;
+            align-items: center;
+            gap: 3%;
+
+            &>div {
+                display: inline-block;
+                width: 10%;
+                aspect-ratio: 1 / 1;
+                background-color: $neutral-100;
+                @include border-radius (50%);
+            }
+
+            &>div:last-child {
+                width: 5%;
+                border: 1px solid $neutral-100;
+                background-color: transparent;
+            }
+        }
+
+        .card-number {
+            margin-top: 8%;
+            font-size: $fs-500;
+            letter-spacing: $ls-500;
+
+            @include media($bp-sm) {
+                font-size: $fs-600;
+            }
+        }
+
+        .card-info {
+            display: flex;
+            justify-content: space-between;
+            font-size: $fs-100;
+            text-transform: uppercase;
+            letter-spacing: $ls-500
+        }
+    }
+
+    .card--back {
+        background-image: url("../images/bg-card-back.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        z-index: 10;
+        bottom: 15%;
+        right: 50%;
+        @include transform (translateX(65%));
+
+        .card-cvc {
+            position: absolute;
+            top: 45.5%;
+            right: 13%;
+            font-size: $fs-100;
+            letter-spacing: $ls-500;
+        }
+
+        @include media($bp-sm) {
+            @include transform (translate(50%, 7%));
+            bottom: auto;
+            top: 50%;
+            right: 0%;
+        }
+    }
+}
+
+.card-form {
+
+    max-width: 375px;
+    margin-top: 8rem;
+    padding: clamp(.75rem, 6vw, 1.5rem);
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+
+    @include media ($bp-sm) {
+        max-height: 400px;
+        margin-top: 0;
+        @include transform (translateX(20%));
+    }
+
+    label {
+        margin-bottom: .4rem;
+        letter-spacing: $ls-500;
+        text-transform: lowercase;
+        font-variant: small-caps;
+    }
+
+    input:not([type="submit"]) {
+        padding: .5em 0em .5em 0.8em;
+        @include border-radius (7px);
+        border: 1px solid $neutral-200;
+        position: relative;
+    }
+
+    input:focus {
+            border: 1px solid $neutral-700;
+            box-shadow: 0px 0px 3px 2px hsl(249, 99%, 64%);
+            outline: none;
+    }
+
+    .name-input,
+    .number-input {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .info-input {
+        width: 100%;
+        display: flex;
+        gap: 3%;
+
+        .exp-date {
+            display: flex;
+            flex-direction: column;
+            width: 50%;
+            white-space: nowrap;
+
+            &>div {
+                display: flex;
+                justify-content: center;
+                gap: 4%;
+
+                input {
+                    width: 50%;
+                }
+            }
+        }
+
+        .cvc-code {
+            input {
+                width: 100%;
+            }
+
+            max-width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    .button {
+        margin-top: .5rem;
+    }
+
+    &>*:not(:last-child) {
+        margin-bottom: 1.2rem;
+    }
+}
+
+.completed {
+    max-width: 375px;
+    padding: clamp(.75rem, 6vw, 1.5rem);
+    margin-inline: auto;
+    text-align: center;
+
+    @include media ($bp-sm) {
+        align-self: center;
+        max-height: 400px;
+        @include transform (translateX(20%));
+    }
+
+    .checkmark {
+        margin-inline: auto;
+        margin-top: 3rem;
+    }
+
+    .thanks {
+        font-size: $fs-700;
+        text-transform: uppercase;
+        letter-spacing: $ls-600;
+        margin-block: 1.2em .7em;
+    }
+
+    .message {
+        color: $neutral-300
+    }
+
+
+    .button {
+        margin-top: 3rem;
+    }
+}
+
+.error {
+    font-size: $fs-200;
+    margin-top: .5em;
+    color: $color-validation-error;
+}
+
+.validation-error {
+    border: 1px solid $color-validation-error !important;
+}

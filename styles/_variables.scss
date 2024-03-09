@@ -1,0 +1,32 @@
+// colors
+
+$color-validation-error: hsl(0, 100%, 66%);
+
+$neutral-100: hsl(0, 0%, 100%);
+$neutral-200: hsl(270, 3%, 87%);
+$neutral-300: hsl(279, 6%, 55%);
+$neutral-700: hsl(278, 68%, 11%);
+
+$active-input-gradient: linear-gradient(to-right,hsl(249, 99%, 64%), hsl(278, 94%, 30%));
+
+
+// typography
+
+$ff-serif: "Space Grotesk", Arial, Helvetica, sans-serif;
+
+$fs-100: 0.625rem;
+$fs-200: 0.75rem;
+$fs-400: 1rem;
+$fs-500: 1.125rem;
+$fs-600: 1.5rem;
+$fs-700: 1.75rem;
+
+
+$fw-normal: 500;
+
+$ls-500: 0.06rem;
+$ls-600: 0.15rem;
+
+// breakpoints
+
+$bp-sm: 768px;

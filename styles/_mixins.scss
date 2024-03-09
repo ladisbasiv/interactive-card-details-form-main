@@ -1,0 +1,32 @@
+@mixin media ($size) {
+    @media (min-width: $size) and (orientation: landscape) {
+        @content;
+    }
+    @media (min-width: 992px) and (orientation: portrait) {
+        @content;
+    }
+}
+
+@mixin transform ($property) {
+    transform: $property;
+    -webkit-transform: $property;
+    -moz-transform: $property;
+    -ms-transform: $property;
+    -o-transform: $property;
+}
+
+@mixin transition ($value) {
+    transition: $value;
+    -webkit-transition: $value;
+    -moz-transition: $value;
+    -ms-transition: $value;
+    -o-transition: $value;
+}
+
+@mixin border-radius ($value) {
+    border-radius: $value;
+    -webkit-border-radius: $value;
+    -moz-border-radius: $value;
+    -ms-border-radius: $value;
+    -o-border-radius: $value;
+}

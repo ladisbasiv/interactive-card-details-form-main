@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <script defer src="index.js"></script>
+    <title>Frontend Mentor | Interactive card details form</title>
+
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+        min-width: 320px;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body>
+    <main class="content">
+      <div class="cards">
+        <div class="card card--front">
+          <div class="decorative-circles">
+            <div></div>
+            <div></div>
+          </div>
+          <p class="card-number">0000 0000 0000 0000</p>
+          <div class="card-info">
+            <p class="card-owner">Jane Appleseed</p>
+            <p class="card-expire-date">00/00</p>
+          </div>
+        </div>
+        <div class="card card--back">
+          <p class="card-cvc">000</p>
+        </div>
+      </div>
+
+      <form class="card-form" name="cardForm">
+        <div class="name-input">
+          <label for="name">Cardholder Name</label>
+          <input
+            type="text"
+            id="name"
+            name="cardOwnerName"
+            placeholder="e.g. Jane Appleseed"
+            data-update="card-owner"
+            maxlength="27"
+          />
+        </div>
+        <div class="number-input">
+          <label for="number">Card Number</label>
+          <input
+            type="text"
+            id="number"
+            name="cardNumber"
+            placeholder="e.g. 1234 5678 9123 0000"
+            maxlength="16"
+            data-update="card-number"
+          />
+        </div>
+
+        <div class="info-input">
+          <div class="exp-date">
+            <label for="exp-month">Exp. Date (MM/YY)</label>
+            <div>
+              <input
+                type="text"
+                id="exp-month"
+                name="cardExpMonth"
+                placeholder="MM"
+                maxlength="2"
+                data-update="card-expire-date"
+              />
+              <input
+                type="text"
+                id="exp-year"
+                name="cardExpYear"
+                placeholder="YY"
+                maxlength="4"
+                data-update="card-expire-date"
+              />
+            </div>
+          </div>
+          <div class="cvc-code">
+            <label for="cvc">CVC</label>
+            <input
+              type="text"
+              id="cvc"
+              name="cardCVC"
+              placeholder="e.g. 123"
+              maxlength="3"
+              data-update="card-cvc"
+            />
+          </div>
+        </div>
+        <input
+          class="button"
+          type="submit"
+          id="submit-button"
+          value="Confirm"
+        />
+      </form>
+    </main>
+
+    <!-- Completed state start -->
+
+    <div class="completed" hidden style="display: none">
+      <img class="checkmark" src="./images/icon-complete.svg" alt="checkmark" />
+      <p class="thanks">Thank you!</p>
+      <p class="message">We've added your card details</p>
+      <a href="#" class="button">Continue</a>
+    </div>
+
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ladis Basiv</a>.
+    </div>
+  </body>
+</html>

@@ -1,0 +1,437 @@
+/*
+  https://www.joshwcomeau.com/css/custom-css-reset/
+  https://andy-bell.co.uk/a-modern-css-reset/
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  text-rendering: optimizeSpeed;
+  -webkit-font-smoothing: antialiased;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+a[class] {
+  text-decoration: none;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  font-family: "Space Grotesk", Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: hsl(278, 68%, 11%);
+}
+
+.button {
+  display: block;
+  width: 100%;
+  text-align: center;
+  border: none;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  padding-block: 0.8em;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  transition: transform 0.5s ease-out;
+  -webkit-transition: transform 0.5s ease-out;
+  -moz-transition: transform 0.5s ease-out;
+  -ms-transition: transform 0.5s ease-out;
+  -o-transition: transform 0.5s ease-out;
+}
+.button:hover {
+  transform: scale(0.95);
+  -webkit-transform: scale(0.95);
+  -moz-transform: scale(0.95);
+  -ms-transform: scale(0.95);
+  -o-transform: scale(0.95);
+}
+.button:active {
+  transform: scale(0.92);
+  -webkit-transform: scale(0.92);
+  -moz-transform: scale(0.92);
+  -ms-transform: scale(0.92);
+  -o-transform: scale(0.92);
+}
+
+.content {
+  min-height: 100vh;
+  max-width: 1440px;
+  min-width: 320px;
+  margin-inline: auto;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  box-shadow: 0px 0px 15px #333;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .content {
+    grid-template-columns: 2fr 5fr;
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .content {
+    grid-template-columns: 2fr 5fr;
+  }
+}
+.content > * {
+  height: 100%;
+}
+
+.cards {
+  background-image: url("../images/bg-main-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 35vh;
+  position: relative;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .cards {
+    background-image: url("../images/bg-main-desktop.png");
+    height: 100%;
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .cards {
+    background-image: url("../images/bg-main-desktop.png");
+    height: 100%;
+  }
+}
+.cards .card {
+  height: 145px;
+  aspect-ratio: 1.8/1;
+  padding: 1.25rem;
+  position: absolute;
+  color: hsl(0, 0%, 100%);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .cards .card {
+    height: 185px;
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .cards .card {
+    height: 185px;
+  }
+}
+.cards .card--front {
+  background-image: url("../images/bg-card-front.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 11;
+  bottom: -20%;
+  left: 50%;
+  transform: translateX(-65%);
+  -webkit-transform: translateX(-65%);
+  -moz-transform: translateX(-65%);
+  -ms-transform: translateX(-65%);
+  -o-transform: translateX(-65%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .cards .card--front {
+    transform: translate(30%, -7%);
+    -webkit-transform: translate(30%, -7%);
+    -moz-transform: translate(30%, -7%);
+    -ms-transform: translate(30%, -7%);
+    -o-transform: translate(30%, -7%);
+    bottom: 50%;
+    left: auto;
+    right: 0;
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .cards .card--front {
+    transform: translate(30%, -7%);
+    -webkit-transform: translate(30%, -7%);
+    -moz-transform: translate(30%, -7%);
+    -ms-transform: translate(30%, -7%);
+    -o-transform: translate(30%, -7%);
+    bottom: 50%;
+    left: auto;
+    right: 0;
+  }
+}
+.cards .card--front .decorative-circles {
+  display: flex;
+  align-items: center;
+  gap: 3%;
+}
+.cards .card--front .decorative-circles > div {
+  display: inline-block;
+  width: 10%;
+  aspect-ratio: 1/1;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+}
+.cards .card--front .decorative-circles > div:last-child {
+  width: 5%;
+  border: 1px solid hsl(0, 0%, 100%);
+  background-color: transparent;
+}
+.cards .card--front .card-number {
+  margin-top: 8%;
+  font-size: 1.125rem;
+  letter-spacing: 0.06rem;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .cards .card--front .card-number {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .cards .card--front .card-number {
+    font-size: 1.5rem;
+  }
+}
+.cards .card--front .card-info {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06rem;
+}
+.cards .card--back {
+  background-image: url("../images/bg-card-back.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  z-index: 10;
+  bottom: 15%;
+  right: 50%;
+  transform: translateX(65%);
+  -webkit-transform: translateX(65%);
+  -moz-transform: translateX(65%);
+  -ms-transform: translateX(65%);
+  -o-transform: translateX(65%);
+}
+.cards .card--back .card-cvc {
+  position: absolute;
+  top: 45.5%;
+  right: 13%;
+  font-size: 0.625rem;
+  letter-spacing: 0.06rem;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .cards .card--back {
+    transform: translate(50%, 7%);
+    -webkit-transform: translate(50%, 7%);
+    -moz-transform: translate(50%, 7%);
+    -ms-transform: translate(50%, 7%);
+    -o-transform: translate(50%, 7%);
+    bottom: auto;
+    top: 50%;
+    right: 0%;
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .cards .card--back {
+    transform: translate(50%, 7%);
+    -webkit-transform: translate(50%, 7%);
+    -moz-transform: translate(50%, 7%);
+    -ms-transform: translate(50%, 7%);
+    -o-transform: translate(50%, 7%);
+    bottom: auto;
+    top: 50%;
+    right: 0%;
+  }
+}
+
+.card-form {
+  max-width: 375px;
+  margin-top: 8rem;
+  padding: clamp(0.75rem, 6vw, 1.5rem);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .card-form {
+    max-height: 400px;
+    margin-top: 0;
+    transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+    -moz-transform: translateX(20%);
+    -ms-transform: translateX(20%);
+    -o-transform: translateX(20%);
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .card-form {
+    max-height: 400px;
+    margin-top: 0;
+    transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+    -moz-transform: translateX(20%);
+    -ms-transform: translateX(20%);
+    -o-transform: translateX(20%);
+  }
+}
+.card-form label {
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.06rem;
+  text-transform: lowercase;
+  font-variant: small-caps;
+}
+.card-form input:not([type=submit]) {
+  padding: 0.5em 0em 0.5em 0.8em;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  border: 1px solid hsl(270, 3%, 87%);
+  position: relative;
+}
+.card-form input:focus {
+  border: 1px solid hsl(278, 68%, 11%);
+  box-shadow: 0px 0px 3px 2px hsl(249, 99%, 64%);
+  outline: none;
+}
+.card-form .name-input,
+.card-form .number-input {
+  display: flex;
+  flex-direction: column;
+}
+.card-form .info-input {
+  width: 100%;
+  display: flex;
+  gap: 3%;
+}
+.card-form .info-input .exp-date {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  white-space: nowrap;
+}
+.card-form .info-input .exp-date > div {
+  display: flex;
+  justify-content: center;
+  gap: 4%;
+}
+.card-form .info-input .exp-date > div input {
+  width: 50%;
+}
+.card-form .info-input .cvc-code {
+  max-width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.card-form .info-input .cvc-code input {
+  width: 100%;
+}
+.card-form .button {
+  margin-top: 0.5rem;
+}
+.card-form > *:not(:last-child) {
+  margin-bottom: 1.2rem;
+}
+
+.completed {
+  max-width: 375px;
+  padding: clamp(0.75rem, 6vw, 1.5rem);
+  margin-inline: auto;
+  text-align: center;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  .completed {
+    align-self: center;
+    max-height: 400px;
+    transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+    -moz-transform: translateX(20%);
+    -ms-transform: translateX(20%);
+    -o-transform: translateX(20%);
+  }
+}
+@media (min-width: 992px) and (orientation: portrait) {
+  .completed {
+    align-self: center;
+    max-height: 400px;
+    transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+    -moz-transform: translateX(20%);
+    -ms-transform: translateX(20%);
+    -o-transform: translateX(20%);
+  }
+}
+.completed .checkmark {
+  margin-inline: auto;
+  margin-top: 3rem;
+}
+.completed .thanks {
+  font-size: 1.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-block: 1.2em 0.7em;
+}
+.completed .message {
+  color: hsl(279, 6%, 55%);
+}
+.completed .button {
+  margin-top: 3rem;
+}
+
+.error {
+  font-size: 0.75rem;
+  margin-top: 0.5em;
+  color: hsl(0, 100%, 66%);
+}
+
+.validation-error {
+  border: 1px solid hsl(0, 100%, 66%) !important;
+}/*# sourceMappingURL=style.css.map */
