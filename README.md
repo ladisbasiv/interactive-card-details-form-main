@@ -7,6 +7,7 @@ This is a solution to the [Interactive card details form challenge on Frontend M
 - [Overview](#overview)
   - [The challenge](#the-challenge)
   - [Screenshot](#screenshot)
+  - [Link](#link)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [What I learned](#what-i-learned)
@@ -32,6 +33,10 @@ Users should be able to:
 ![](./screenshots/one.png)
 ![](./screenshots/two.png)
 
+# Link
+
+[Project demo](https://ladisbasiv.github.io/interactive-card-details-form-main/)  
+
 ## My process
 
 ### Built with
@@ -43,7 +48,7 @@ Users should be able to:
 
 ### What I learned
 
-Validating complex forms using JS happened be to more time consuming task that I thought. With every field having it's own nuances and patterns, making sure everything works as intended took more time than the HTML and CSS did.
+Validating complex forms using JS happened be to more time consuming task that I thought. With every field having it's own nuances and patterns, making sure everything works as intended took more time than HTML and CSS did.
 
 ### Continued development
 
